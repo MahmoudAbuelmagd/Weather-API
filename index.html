@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg py-5">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <img src="images/logo@2x.png" class="logo w-50 me-2"
+              alt="Weather logo">
+            <a class="navbar-brand pt-2 mt-1" href="index.html">
+              <h1 class="m-0"> Weather</h1>
+              <small class="grey-font m-0"> tagline goes here</small>
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link rounded-pill active" aria-current="page"
+                  href="#">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link rounded-pill " href="#">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link rounded-pill" href="#">Live Camera</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link rounded-pill" href="#">Photos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link rounded-pill" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="heroSection" class="py-5">
+        <div class="container">
+          <div class="locContainer position-relative mt-3 mb-5">
+            <input type="text"
+              class="locationInput p-3 rounded-pill form-control"
+              placeholder="Find your location..">
+            <button
+              class="btn main-color px-4 rounded-pill text-white position-absolute">
+              Find</button>
+          </div>
+          <div class="daily_forecast">
+            <div class=" row mt-5 g-0">
+              <div class="col-lg-4 lightSec_color rounded-4">
+                <div
+                  class="day_header p-3 px-3 d-flex justify-content-between align-items-center">
+                  <span class="day"> wednesday</span>
+                  <span class="date"> 25 septemper</span>
+                </div>
+                <div class="day_body p-3 text-white">
+                  <div class="location fs-3 fw-lighter"> Cairo</div>
+                  <div class="temp fw-bold"> 31.2 C</div>
+                  <img src="images/sunny.png" class="img" alt="sunny day">
+                  <span class="status d-block text-info mb-3 fw-lighter">
+                    Sunny</span>
+                  <span class="me-2"> <i
+                      class="fa-solid fa-umbrella me-1 fs-4"></i> <span class="humidity">20%</span></span>
+                  <span class="me-2"> <i class="fa-solid fa-wind me-1 fs-4"></i>
+                    <span class="speed">
+                    18km/h </span> </span>
+                  <span class="me-2"> <i
+                      class="fa-solid fa-earth me-1 fs-4"></i> <span class="direction"> East </span></span>
+                </div>
+              </div>
+              <div class="col-lg-4 section_color rounded-4">
+                <div class="day_header text-center p-3">
+                  <span class="nextDay fs-6"> Thursday</span>
+                </div>
+                <div class="day_body p-3 text-white text-center mt-4">
+                  <img class="forecastIcon" src="images/sunny.png" alt="sunny day">
+                  <div class="main-temp fs-4 fw-bolder mt-2 mb-1"> 26.6 </div>
+                  <small class="tempurature fs-6 grey-font"> 23.5 </small>
+                  <span class="nextStatus d-block text-info my-3 fw-lighter">
+                    Sunny</span>
+                </div>
+              </div>
+              <div class="col-lg-4 lightSec_color rounded-4 after_forecast">
+                <div class="day_header text-center p-3">
+                  <span class="day fs-6"> Friday</span>
+                </div>
+                <div class="day_body p-3 text-white text-center mt-4">
+                  <img src="images/sunny.png" alt="sunny day">
+                  <div class="main-temp fs-4 fw-bolder mt-2 mb-1"> 35.1 C</div>
+                  <small class="tempurature fs-6 grey-font"> 23.5 C</small>
+                  <span class="status d-block text-info my-3 fw-lighter">
+                    Sunny</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="py-5 lightSec_color">
+        <div class="container">
+          <div
+            class="parent row justify-content-between align-content-center ">
+            <div class="w-75 position-relative ">
+              <form>
+                <input type="email" class="section_color border-0 rounded-pill p-3 form-control"
+                  placeholder="Enter Your Email Subscribe...">
+                </form>
+                <button
+                class="btn main-color px-4 rounded-pill text-white position-absolute">
+                Subscribe</button>
+              </div>
+            <div class="social-media w-25">
+              <ul class="list-unstyled d-flex justify-content-center m-0 pt-2">
+                <li class="bg-icon">
+                  <a><i class="fa-brands fa-facebook fa-1x"></i></a>
+                </li>
+                <li class="bg-icon">
+                  <a><i class="fa-brands fa-youtube fa-1x"></i></a>
+                </li>
+                <li class="bg-icon">
+                  <a><i class="fa-brands fa-google fa-1x"></i></a>
+                </li>
+                <li class="bg-icon">
+                  <a><i class="fa-brands fa-pinterest fa-1x"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <p class="text-secondary ms-1 mt-3">Copyright 2024 All rights reserved</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>
