@@ -121,3 +121,9 @@ footer input[type="email"]::placeholder{
 .navbar-toggler {
   border-color: transparent;
 }
+
+@media (max-width:768px) {
+  .formContainer{
+    width:100% !important;
+  }
+}

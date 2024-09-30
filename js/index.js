@@ -1,33 +1,37 @@
 const searchInput = document.querySelector('.locationInput')
 
+getWeather("cairo");
 async function getWeather(city) {
-  let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=379a0fd08c3542a6835225335242509&q=${city}&days=3`)
-  let weatherData = await response.json();
+  const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=379a0fd08c3542a6835225335242509&q=${city}&days=3`)
+  const weatherData = await response.json();
   if (!weatherData.error) {
     currentTodayForecast(weatherData);
     tomorrowForecast(weatherData);
     tomorrowAfterForecast(weatherData);
   }
-  // console.log(weatherData);
 }
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {  
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
     getWeather(`${latitude}, ${longitude}`)
   })
 }
 
 
-searchInput.addEventListener('input',function () {
-  getWeather(this.value);
+searchInput.addEventListener('input', function () {
+  if (this.value.length < 2) {
+    return false;
+  } else {
+    getWeather(this.value);
+  }
 })
 
 const dayNames = ["Sunday", "Monday", "Tuesday" ,"Wednesday" , "Thursday" ,"Friday","Saturday"];
 function currentTodayForecast(data) {
-  let { last_updated, temp_c, condition, humidity, wind_dir, wind_kph} = data.current;
-  let pureDate = last_updated.slice(0, 10);  
+  const { last_updated, temp_c, condition, humidity, wind_dir, wind_kph} = data.current;
+  const pureDate = last_updated.slice(0, 10);  
   const date = new Date(pureDate);
   const day = date.getDay();
   const month = date.getMonth();
@@ -45,8 +49,8 @@ function currentTodayForecast(data) {
   
 }
 function tomorrowForecast(data) {
-  let { date, day} = data.forecast.forecastday[1];
-  let tomorrowDate = date;
+  const { date, day} = data.forecast.forecastday[1];
+  const tomorrowDate = date;
   const dateObj = new Date(tomorrowDate);
   const Day = dateObj.getDay();
   document.querySelector('.nextDay').innerHTML = dayNames[Day];
@@ -57,8 +61,8 @@ function tomorrowForecast(data) {
 }
 
 function tomorrowAfterForecast(data) {
-  let { date, day} = data.forecast.forecastday[2];
-  let tomorrowAfterDate = date;
+  const { date, day} = data.forecast.forecastday[2];
+  const tomorrowAfterDate = date;
   const dateObj = new Date(tomorrowAfterDate)
   const tomorrowAfterDay = dateObj.getDay();
   document.querySelector('.after_forecast span.day').innerHTML = dayNames[tomorrowAfterDay];
